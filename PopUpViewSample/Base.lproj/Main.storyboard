@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PopUpViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voY-ej-TLP">
+                                <rect key="frame" x="275" y="40" width="51" height="30"/>
+                                <state key="normal" title="Pop Up"/>
+                                <connections>
+                                    <action selector="didPressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pLv-9a-xCp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72962486416676942" green="0.95516479015350342" blue="0.90245340017208853" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="voY-ej-TLP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="8eg-pD-ZeQ"/>
+                            <constraint firstItem="voY-ej-TLP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UCe-lT-ZBe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="VJb-st-xuZ" kind="presentation" identifier="modal" modalTransitionStyle="crossDissolve" id="i2K-4t-zyl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="287"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="QYs-D8-z2N">
+            <objects>
+                <viewController storyboardIdentifier="ModalViewController" modalPresentationStyle="overCurrentContext" id="VJb-st-xuZ" customClass="ModalViewController" customModule="PopUpViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3YY-Zi-7WI"/>
+                        <viewControllerLayoutGuide type="bottom" id="76d-rz-YC1"/>
+                    </layoutGuides>
+                    <view key="view" tag="1" contentMode="scaleToFill" id="KRX-zW-Nkd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYB-TA-UaZ">
+                                <rect key="frame" x="20" y="100" width="560" height="400"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7U-Pi-bh7">
+                                        <rect key="frame" x="261" y="185" width="39" height="30"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="didTapClose:" destination="VJb-st-xuZ" eventType="touchUpInside" id="YEC-uX-XOZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.84793022829999998" blue="0.91588073510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="C7U-Pi-bh7" firstAttribute="centerX" secondItem="JYB-TA-UaZ" secondAttribute="centerX" id="Tt3-55-kjq"/>
+                                    <constraint firstItem="C7U-Pi-bh7" firstAttribute="centerY" secondItem="JYB-TA-UaZ" secondAttribute="centerY" id="oE5-YK-usH"/>
+                                    <constraint firstAttribute="height" constant="400" id="rRb-1e-x18"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JYB-TA-UaZ" firstAttribute="leading" secondItem="KRX-zW-Nkd" secondAttribute="leading" constant="20" id="ORf-Bq-JqN"/>
+                            <constraint firstItem="JYB-TA-UaZ" firstAttribute="top" secondItem="3YY-Zi-7WI" secondAttribute="bottom" constant="80" id="Skx-7T-ERz"/>
+                            <constraint firstItem="JYB-TA-UaZ" firstAttribute="centerX" secondItem="KRX-zW-Nkd" secondAttribute="centerX" id="axT-Qq-Bwg"/>
+                            <constraint firstAttribute="trailing" secondItem="JYB-TA-UaZ" secondAttribute="trailing" constant="20" id="lgm-uz-LOu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsZ-ke-Oqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="289"/>
+        </scene>
+    </scenes>
+</document>
